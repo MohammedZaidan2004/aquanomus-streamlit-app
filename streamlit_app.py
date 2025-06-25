@@ -5,7 +5,7 @@ import json
 
 
 # Load model sekali di awal
-model = tf.keras.models.load_model("Model/Z_Model.keras")
+model = tf.keras.models.load_model("Model/Z_Model.h5", compile=False)
 
 # Load class names
 with open("Model/Z_Model_class_names.json", "r") as f:
