@@ -5,10 +5,10 @@ import json
 
 
 # Load model sekali di awal
-model = tf.keras.models.load_model("Model/Z_Model.h5", compile=False)
+model = tf.keras.models.load_model("Model/ZDN_Model.h5", compile=False)
 
 # Load class names
-with open("Model/Z_Model_class_names.json", "r") as f:
+with open("Model/ZDN_Model_class_names.json", "r") as f:
     class_names = json.load(f)
 
 #Tensorflow Model Prediction
@@ -69,21 +69,19 @@ if(app_mode=="Tentang Model"):
 
     st.markdown("""
     ### Dataset
-    Dalam melatih model, kami menggunakan dataset yang terdiri atas gambar-gambar daun tanaman sehat dan tanaman yang terkena penyakit. Dataset ini dapat diakses melalui **[link ini](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)**. Dari dataset tersebut, kami membaginya menjadi dua kategori, yaitu tanaman sehat dan tanaman sakit. Kami tidak menggunakan seluruh gambar dalam dataset agar proses pelatihan lebih efisien. Berikut konfigurasi dataset yang kami gunakan:               
+    Dalam melatih model, kami menggunakan dataset yang terdiri atas gambar-gambar daun tanaman anubias sehat dan yang terdapat gejala penyakit. Dataset ini kami buat sendiri menggunakan tanaman anubias yang kami miliki. Dari dataset tersebut, kami membaginya menjadi dua kategori, yaitu tanaman sehat dan tanaman sakit. Berikut konfigurasi dataset yang kami gunakan:               
     
-    1. Train (9861 gambar).
-    2. Validation (2851 gambar).
-    3. Test (62 gambar).
+    1. Train (6082 gambar).
+    2. Validation (2691 gambar).
+    3. Test (22 gambar).
                 
-    **Catatan**: Dataset yang kami gunakan bukanlah gambar tanaman anubias, namun diharapkan dapat mengekstrasi pola daun yang serupa dengan daun yang dimiliki tanaman anubias.
-
     ### Hasil Training dan Metrics
     Kami melatih model kami selama 100 epoch. Berikut adalah hasil pelatihan model kami:
                 
     **Grafik Hasil Training**
     """, unsafe_allow_html=True)
 
-    st.image("Image/Training Plot.png", use_container_width=True)
+    st.image("Image/Graph Plot.png", use_container_width=True)
 
     st.markdown("""
     **Confusion Matrix Model**
